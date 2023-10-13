@@ -8,6 +8,8 @@ const Nav = () => {
   const isuserLogedIn = true;
   const [providers, setProviders] = useState(null);
 
+  const [toggleDropDown, setToggleDropDown] = useState(false);
+
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders();
@@ -47,6 +49,67 @@ const Nav = () => {
                 className="rounded-full"
               ></Image>
             </Link>
+          </div>
+        ) : (
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type="button"
+                  key={provider.name}
+                  onClick={() => signIn(provider.id)}
+                  className="black_btn"
+                >
+                  Sign In
+                </button>
+              ))}
+          </>
+        )}
+      </div>
+
+      {/* Mobile Nav */}
+
+      <div className="sm:hidden flex relative">
+        {isuserLogedIn ? (
+          <div className="flex">
+            <Image
+              src="/assets/images/logo.svg"
+              width={37}
+              height={37}
+              alt="profile"
+              className="rounded-full"
+              onClick={() => {
+                setToggleDropDown((prev) => !prev);
+              }}
+            ></Image>
+            {toggleDropDown && (
+              <div className="dropdown">
+                <Link
+                  href="/profile"
+                  className="dropdown-link"
+                  onClick={() => setToggleDropDown(false)}
+                >
+                  My Profile
+                </Link>
+                <Link
+                  href="/create=prompt"
+                  className="dropdown-link"
+                  onClick={() => setToggleDropDown(false)}
+                >
+                  Create Prompt
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setToggleDropDown(false);
+                    signOut();
+                  }}
+                  className="mt-5 w-full black_btn"
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           <>
