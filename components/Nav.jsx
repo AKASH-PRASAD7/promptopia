@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
-  const isuserLogedIn = true;
+  const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
 
   const [toggleDropDown, setToggleDropDown] = useState(false);
@@ -30,9 +30,9 @@ const Nav = () => {
         <p className="logo_text">Promtopia</p>
       </Link>
 
-      {/* Mobile Nav */}
+      {/* Desktop Nav */}
       <div className="sm:flex hidden">
-        {isuserLogedIn ? (
+        {session?.user ? (
           <div className=" flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
               Create Prompt
@@ -42,7 +42,7 @@ const Nav = () => {
             </button>
             <Link href="/profile">
               <Image
-                src="/assets/images/logo.svg"
+                src={session?.user?.image}
                 width={37}
                 height={37}
                 alt="profile"
@@ -70,10 +70,10 @@ const Nav = () => {
       {/* Mobile Nav */}
 
       <div className="sm:hidden flex relative">
-        {isuserLogedIn ? (
+        {session?.user ? (
           <div className="flex">
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user?.image}
               width={37}
               height={37}
               alt="profile"
