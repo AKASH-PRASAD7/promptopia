@@ -11,11 +11,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <head>
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="/assests/icons/logo.ico"
-        ></link>
+        <link rel="icon" href="/assets/icons/logo.ico"></link>
       </head>
       <body>
         <Provider>
