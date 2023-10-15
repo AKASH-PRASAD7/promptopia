@@ -1,7 +1,6 @@
 import PromptCard from "./PromptCard";
 
 const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
-  console.log(data);
   return (
     <section className="w-full">
       <h1 className="head_text text-left">
@@ -12,7 +11,7 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
         {data &&
           data.map((prompt) => (
             <PromptCard
-              key={prompt.id}
+              key={prompt._id}
               prompt={prompt}
               handleEdit={() => handleEdit && handleEdit(prompt)}
               handleDelete={() => handleDelete && handleDelete(prompt)}

@@ -9,7 +9,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
       {data &&
         data.map((prompt) => (
           <PromptCard
-            key={prompt.id}
+            key={prompt._id}
             prompt={prompt}
             handleTagClick={handleTagClick}
           />
