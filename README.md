@@ -2,7 +2,10 @@
 
 Promptopia is a web application that allows users to create and share AI prompts with others. It provides CRUD (Create, Read, Update, Delete) functionality for managing prompts, and users can sign in using their Google account for a seamless experience. The project is built using Next.js, Tailwind CSS, MongoDB for database storage, NextAuth for authentication, and Google Sign-In for user management.
 
-## Screenshot
+## Screenshots
+<img width="952" alt="image" src="https://github.com/AKASH-PRASAD7/promptopia/assets/110546856/e264349b-d7e0-4b39-be03-f859590eef5f">
+
+<img width="926" alt="image" src="https://github.com/AKASH-PRASAD7/promptopia/assets/110546856/cab0f806-d10c-49e4-af1a-788b2772fdf0">
 
 ## Table of Contents
 
