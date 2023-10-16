@@ -35,7 +35,7 @@ Promptopia is a web application that allows users to create and share AI prompts
 
 - **NextAuth**: Provides authentication, including Google Sign-In, for the application.
 
-- **Google Sign-In/Console**: Integrates with Google's authentication services for user management.
+- **Google Sign-In**: Integrates with Google's authentication services for user management.
 
 - **Session Management**: Handles user sessions to keep them authenticated.
 
